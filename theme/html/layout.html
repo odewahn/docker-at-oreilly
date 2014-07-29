@@ -30,6 +30,10 @@
       </div>
       <img class="logo" src="http://orm-logo-service.herokuapp.com/{{ practice-area }}/logo.svg"/>
       <h1>{{ title }}</h1>
+      <ul class="page-navigation">
+        <li>{{ prev_link }}</li>
+        <li>{{ next_link }}</li>
+      </ul>
       </header>
       <div id="flex-box">
         <section id="sidebar">
@@ -37,11 +41,8 @@
         </section>
         <section id="content">
           <section id="content-body">
+
             {{ content }}
-            <ul class="page-navigation">
-              <li>{{ prev_link }}</li>
-              <li>{{ next_link }}</li>
-            </ul>
           </section>
         </section>
       </div>
