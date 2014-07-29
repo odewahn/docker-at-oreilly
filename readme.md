@@ -2,22 +2,31 @@
 
 <img src="images/docker-at-orm-cover.png"/>
 
-Docker Boston
+Docker Boston Meetup
+
 July 30, 2014
+
 Andrew Odewahn (odewahn@oreilly.com)
 
 # Intro to ORM
 
-* Books
-* Conferences
-* Online
+<img src="images/about-orm.png"/>
 
-#  Existential challenges
+* [O'Reilly Media](http://www.oreilly.com/) produces technical books and events
+* Both "Web 2.0" and "Open Source" were terms that came from O'Reilly events
+* Founded in Cambridge, MA, but now headquartered in Sebastopol, CA (north of San Francisco)
+
+# At heart, O'Reilly is a learning company
+
+
+
+
+#  The ways people want to learn are changing radically.
 
 <img src="images/new-learning-tools.png"/>
 
 * How do we create media products like these using our core capabilities (editorial, brand, community)
-* People want to learn in new ways, and we need to learn how to make these new kinds of products while preserving our core capabilities
+* How do we transform as media is increasingly becoming software
 * Exploring Docker to help us make new kinds of media products
 
 # iPython Notebooks
