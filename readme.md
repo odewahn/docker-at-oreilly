@@ -1,5 +1,7 @@
 # Docker Experiments at O'Reilly
 
+<img src="images/docker-at-orm-cover.png"/>
+
 # Intro to ORM
 
 * Books
@@ -22,13 +24,11 @@ How can we use Docker to deliver iPython Notebooks as a new kind of media format
 
 # Case Study 1: Python for Data Analysis
 
-<img src="images/python-data-analysis.png"/>
+<img src="images/python-data-analysis.jpg"/>
 
 * Successful book in the "Data Science Area" published in 2012
 * This is a rapidly changing area
 * How do we keep the tools up to date?
-
-# Delivering Exa
 
 # Running it in boot2docker
 
@@ -38,7 +38,12 @@ How can we use Docker to deliver iPython Notebooks as a new kind of media format
 
 * Start [boot2docker](https://github.com/boot2docker/boot2docker) and ssh into the box
 * Set up an account on [docker.com](https://hub.docker.com/)
-* Pull [odewahn/python-data-analysis](https://registry.hub.docker.com/u/odewahn/python-data-analysis/)
+* Pull [odewahn/python-data-analysis](https://registry.hub.docker.com/u/odewahn/python-data-analysis/).  (*NB: This is a big image -- 3GB+*)
+
+```
+docker pull odewahn/python-data-analysis
+```
+
 * Expose port 8888 in Virtualbox (do this just once)
 
 ```
@@ -71,7 +76,7 @@ root@81ef0c5d1971:/home/atlas# ./start.sh
 2014-07-29 18:49:52.124 [NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 ```
 
-# O'Reilly Atlas
+# What about the rest of our products?
 
 * How we make products now
 * Produces about 80% of our tech books
@@ -80,17 +85,38 @@ root@81ef0c5d1971:/home/atlas# ./start.sh
 
 <img src="images/atlas-key-ideas.png">
 
-# A visual editor for semantic content
-
-* [HTMLBook](https://github.com/oreillymedia/htmlbook)
+# A single source for semantic content
 
 <video autoplay="true" loop="true" muted="true" width="640"><source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/visual_editor.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/visual_editor.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
+	
+	
+* [HTMLBook](https://github.com/oreillymedia/htmlbook)
+* [Markdown](http://daringfireball.net/projects/markdown/)
+* [AsciiDoc](http://www.methods.co.nz/asciidoc/)
+* [DocBook XML](http://www.docbook.org/)
 
-* Also support for AsciiDoc, Markdown, and DocBook XML
+# Version Control
+
+All Atlas content is stored in Git.  
+
+<img src="images/atlas-github.png">
+
+In fact, this presentation is in Atlas on Github:
+
+https://github.com/odewahn/docker-at-oreilly
 
 	
 # Transformations to other forms
 
+<video autoplay="true" loop="true" muted="true" width="640"><source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/make_a_book.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/make_a_book.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
+	
+* Print books (80% of titles published through ORM)
+* EPUB
+* MOBI
+* Web Sites
+  * [Raspberry Pi Cookbook](http://razzpisampler.oreilly.com/)
+  * [Interactive Data Visualization for the Web](http://chimera.labs.oreilly.com/books/1230000000345)
+  * [Etudes for Erlang](http://chimera.labs.oreilly.com/books/1234000000726)
 
 
 # Docker for a roll your own toolchain
