@@ -169,3 +169,8 @@ ul.page-navigation li:nth-child(2) {
   white-space: pre-wrap;
 }
 
+#content-body img {
+	width: 100%;
+}
+
+
