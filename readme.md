@@ -1,6 +1,10 @@
-# Docker Experiments at O'Reilly
+# Docker Experiments at O'Reilly Media
 
 <img src="images/docker-at-orm-cover.png"/>
+
+Docker Boston
+July 30, 2014
+Andrew Odewahn (odewahn@oreilly.com)
 
 # Intro to ORM
 
