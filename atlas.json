@@ -20,7 +20,7 @@
     },
     "html": {
       "index": false,
-      "toc": false
+      "toc": true
     }
   },
   "theme": "",
