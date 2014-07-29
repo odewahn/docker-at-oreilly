@@ -20,14 +20,15 @@ Andrew Odewahn (odewahn@oreilly.com)
 
 
 
-
-#  The ways people want to learn are changing radically.
+# The way people want to learn is changing radically.
 
 <img src="images/new-learning-tools.png"/>
 
 * How do we create media products like these using our core capabilities (editorial, brand, community)
 * How do we transform as media is increasingly becoming software
 * Exploring Docker to help us make new kinds of media products
+
+# Given 
 
 # iPython Notebooks
 
@@ -37,7 +38,7 @@ How can we use Docker to deliver iPython Notebooks as a new kind of media format
 
 # Case Study 1: Python for Data Analysis
 
-<img src="images/python-data-analysis.jpg"/>
+<img style="width: 60%" src="images/python-data-analysis.jpg"/>
 
 * Successful book in the "Data Science Area" published in 2012
 * This is a rapidly changing area
@@ -49,18 +50,19 @@ How can we use Docker to deliver iPython Notebooks as a new kind of media format
 
 # DEMO
 
-* Start [boot2docker](https://github.com/boot2docker/boot2docker) and ssh into the box
+* Install [boot2docker](https://github.com/boot2docker/boot2docker) 
 * Set up an account on [docker.com](https://hub.docker.com/)
-* Pull [odewahn/python-data-analysis](https://registry.hub.docker.com/u/odewahn/python-data-analysis/).  (*NB: This is a big image -- 3GB+*)
-
-```
-docker pull odewahn/python-data-analysis
-```
-
 * Expose port 8888 in Virtualbox (do this just once)
 
 ```
 VBoxManage controlvm boot2docker-vm natpf1 "ipython-notebook,tcp,127.0.0.1,8888,,8888"
+```
+
+* Start boot2docker and ssh into the box
+* Pull [odewahn/python-data-analysis](https://registry.hub.docker.com/u/odewahn/python-data-analysis/).  (*NB: This is a big image -- 3GB+*)
+
+```
+docker pull odewahn/python-data-analysis
 ```
 
 * Start the container, and be sure to expose port 8888
