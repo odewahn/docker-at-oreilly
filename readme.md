@@ -8,7 +8,7 @@ July 30, 2014
 
 Andrew Odewahn (odewahn@oreilly.com)
 
-# Intro to ORM
+# About O'Reilly Media
 
 <img src="images/about-orm.png"/>
 
@@ -28,9 +28,10 @@ Andrew Odewahn (odewahn@oreilly.com)
 * How do we transform as media is increasingly becoming software
 * Exploring Docker to help us make new kinds of media products
 
-# Given 
 
 # iPython Notebooks
+
+<video autoplay="true" loop="true" muted="true" width="640"><source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/ipynb.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/ipynb.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 
 # Key Initiative
 
@@ -62,7 +63,7 @@ VBoxManage controlvm boot2docker-vm natpf1 "ipython-notebook,tcp,127.0.0.1,8888,
 * Pull [odewahn/python-data-analysis](https://registry.hub.docker.com/u/odewahn/python-data-analysis/).  (*NB: This is a big image -- 3GB+*)
 
 ```
-docker pull odewahn/python-data-analysis
+sudo docker pull odewahn/python-data-analysis
 ```
 
 * Start the container, and be sure to expose port 8888
