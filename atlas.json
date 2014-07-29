@@ -24,5 +24,6 @@
     }
   },
   "theme": "",
-  "title": "Docker at O'Reilly"
+  "title": "Docker at O'Reilly",
+  "github_url": "https://github.com/odewahn/docker-at-oreilly"
 }

@@ -14,7 +14,7 @@
 
 #  Existential challenges
 
-<img src="images/new-learning-tools.png">
+<img src="images/new-learning-tools.png"/>
 
 * how do we create media products like these using our core capabilities (editorial, brand, community)
 * People want to learn in new ways, and we need to learn how to make these new kinds of products while preserving our core capabilities

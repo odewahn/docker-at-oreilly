@@ -1,74 +1,53 @@
 {{ doctype }}
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta charset="utf-8"/>
-  <title>{{ title }}</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'> </link>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"> </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
 
-  <link rel="stylesheet" href="theme/html/deck/core/deck.core.css"/>
-  <link rel="stylesheet" media="screen" href="theme/html/deck/extensions/goto/deck.goto.css"/>
-  <link rel="stylesheet" media="screen" href="theme/html/deck/extensions/menu/deck.menu.css"/>
-  <link rel="stylesheet" media="screen" href="theme/html/deck/extensions/navigation/deck.navigation.css"/>
-  <link rel="stylesheet" media="screen" href="theme/html/deck/extensions/status/deck.status.css"/>
-  <link rel="stylesheet" media="screen" href="theme/html/deck/extensions/hash/deck.hash.css"/>
-  <link rel="stylesheet" media="screen" href="theme/html/deck/extensions/scale/deck.scale.css"/>
-  <link rel="stylesheet" media="screen" href="theme/html/deck/themes/transition/horizontal-slide.css"/>
-  <link rel="stylesheet" media="screen" href="theme/html/deck/themes/multicolumn/grid.css"/>
 
-  <script src="theme/html/deck/jquery.min.js"></script>
-  <script src="theme/html/deck/modernizr.custom.js"></script>
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  {{ header }}
-
-  <link rel="stylesheet" media="screen" href="theme/html/deck/themes/responsive/responsive.css"/>
-
-</head>
-
-<body data-type="book">
-
-  <div class="deck-container">
-  
-  <a href="https://github.com/oreilly-media-content/introducing-atlas"><img style="z-index: 999999999; position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
-
-    {{ content }}
-
-    <!-- deck.navigation snippet -->
-    <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
-    <a href="#" class="deck-next-link" title="Next">&#8594;</a>
-
-  </div>
-
-  <!-- Required JS files. -->
-  <script src="theme/html/deck/jquery.min.js"></script>
-  <script src="theme/html/deck/core/deck.core.js"></script>
-  <script src="theme/html/deck/core/deck.core.js"></script>
-  <script src="theme/html/deck/extensions/hash/deck.hash.js"></script>
-  <script src="theme/html/deck/extensions/menu/deck.menu.js"></script>
-  <script src="theme/html/deck/extensions/goto/deck.goto.js"></script>
-  <script src="theme/html/deck/extensions/status/deck.status.js"></script>
-  <script src="theme/html/deck/extensions/navigation/deck.navigation.js"></script>
-  <script src="theme/html/deck/extensions/scale/deck.scale.js"></script>
-
-  <!-- Initialize the deck. -->
-  <script>
-    $(function() {
-      $.deck('.slide');
-    });
-  </script>
-
-  <!--This next bit ensures that the movies play automatically-->
-
-  <script>
-    $(document).ready(function() {
-      $(document).bind('deck.change', function(event, from, to) {
-         var previousvideo = $('.deck-current').find('video').get(0);
-         var currentvideo =  $('.deck-next').find('video').get(0);
-         if(previousvideo) previousvideo.pause();
-         if(currentvideo) currentvideo.play();
-       });
-     });
-  </script>
-</body>
+    <script type="text/javascript">
+      $(function() {
+        $("#link-toc").click(function(e) {
+          e.preventDefault();
+          $("#sidebar").toggle();
+        });
+      });
+    </script>
+    {{ header }}
+  </head>
+  <body data-type="book">
+    {% if github_url %}
+       <a href="{{ github_url }}">
+          <img src="https://s3.amazonaws.com/orm-atlas-media/fork-on-github.png" class="fork-on-github"/>
+       </a>
+    {% endif %}
+    <header>
+      <div id="buttons">
+        <a href="#" id="link-toc">☰</a>
+      </div>
+      <img class="logo" src="http://orm-logo-service.herokuapp.com/{{ practice-area }}/logo.svg"/>
+      <h1>{{ title }}</h1>
+      </header>
+      <div id="flex-box">
+        <section id="sidebar">
+          {{ toc }}
+        </section>
+        <section id="content">
+          <section id="content-body">
+            <ul class="page-navigation">              
+              <li>{{ prev_link }}</li>
+              <li>{{ next_link }}</li>
+            </ul>
+            {{ content }}
+            <ul class="page-navigation">
+              <li>{{ prev_link }}</li>
+              <li>{{ next_link }}</li>
+            </ul>
+          </section>
+        </section>
+      </div>
+  </body>
 </html>
