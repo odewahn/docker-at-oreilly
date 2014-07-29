@@ -1,0 +1,21 @@
+.column {
+  float: left;
+  min-height: 1px;
+  margin-left: 1%; 
+}
+
+.column img {
+  max-width: 100%;
+}
+
+.twocolumn .column {
+  width: 49%;
+}
+
+.threecolumn .column {
+  width: 32%;
+}
+
+.fourcolumn .column {
+  width: 24%;
+}

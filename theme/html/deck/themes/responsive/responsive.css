@@ -1,0 +1,37 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+  section[data-type="chapter"], 
+  section[data-type="titlepage"] {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  section[data-type="chapter"], 
+  section[data-type="titlepage"] {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .column {
+    float: none;
+    min-height: 1px;
+    margin-left: 0; 
+  }
+
+  .twocolumn .column {
+    width: 100%;
+  }
+
+  .threecolumn .column {
+    width: 100%;
+  }
+
+  .fourcolumn .column {
+    width: 100%;
+  }
+
+  .deck-slide-scaler {
+    -webkit-transform: scale(1.0);
+  }
+}
