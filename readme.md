@@ -31,7 +31,7 @@ Andrew Odewahn (odewahn@oreilly.com)
 
 # iPython Notebooks
 
-<video autoplay="true" loop="true" muted="true" width="640"><source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/ipynb.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/ipynb.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
+<video autoplay="true" loop="true" muted="true" width="640"><source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 
 # Key Initiative
 
@@ -72,6 +72,11 @@ sudo docker pull odewahn/python-data-analysis
 sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 ```
 
+* Once the container starts and your at the bash prompt, start the server with this command:
+
+```
+./start.sh
+```
 * Go to localhost:8888 on your local browser
 
 # DEMO - SESSION
