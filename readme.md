@@ -19,7 +19,6 @@ Andrew Odewahn (odewahn@oreilly.com)
 # At heart, O'Reilly is a learning company
 
 
-
 # The way people want to learn is changing radically.
 
 <img src="images/new-learning-tools.png"/>
@@ -31,7 +30,11 @@ Andrew Odewahn (odewahn@oreilly.com)
 
 # iPython Notebooks
 
-<video autoplay="true" loop="true" muted="true" width="640"><source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
+<video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
+	
+* Critical tool in the scientific and big data science communities
+* Authoring and execution environment for text, math, and arbitrary code (Python, Julia, R, and Ruby)
+* Strong demand among our authors to support this format
 
 # Key Initiative
 
@@ -43,7 +46,7 @@ How can we use Docker to deliver iPython Notebooks as a new kind of media format
 
 * Successful book in the "Data Science Area" published in 2012
 * This is a rapidly changing area
-* How do we keep the tools up to date?
+* Create a companion product as an iPython Notebook
 
 # Running it in boot2docker
 
@@ -77,6 +80,7 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 ```
 ./start.sh
 ```
+
 * Go to localhost:8888 on your local browser
 
 # DEMO - SESSION
@@ -97,12 +101,14 @@ root@81ef0c5d1971:/home/atlas# ./start.sh
 2014-07-29 18:49:52.124 [NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 ```
 
-# What about the rest of our products?
+# How do we make actual products?
 
-* How we make products now
-* Produces about 80% of our tech books
+<img src="images/atlas-splashpage.png">
 
-# Key Concepts
+* Companion products are great, but how do we make actual products themselves?
+* We use an internally developed tool call [O'Reilly Atlas](https://atlas.oreilly.com/) for 80% of our content.
+
+# Atlas Key Concepts
 
 <img src="images/atlas-key-ideas.png">
 
@@ -127,7 +133,7 @@ In fact, this presentation is in Atlas on Github:
 https://github.com/odewahn/docker-at-oreilly
 
 	
-# Transformations to other forms
+# Transformation engines
 
 <video autoplay="true" loop="true" muted="true" width="640"><source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/make_a_book.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/make_a_book.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 	
@@ -140,20 +146,125 @@ https://github.com/odewahn/docker-at-oreilly
   * [Etudes for Erlang](http://chimera.labs.oreilly.com/books/1234000000726)
 
 
-# Docker for a roll your own toolchain
+# Docker toolchain for transforming Atlas Projects to ipynb
 
-* ipython notebooks as a product we want to make
+<img src="images/atlas2ipynb.png">
+
+* A gem to transform HTMLBook into iPython Notebook's JSON-based format
+* An [atlas-base](https://github.com/odewahn/ipython-docker/blob/master/base/Dockerfile) Docker image
+
+
+# "Dockerfile" for books
+
+```
+#
+# This is a sample dockerfile for spinning up a content image
+# Basically, it starts the base box and then uses the 
+# atlas api to load up the content
+#
+# Before running this, be sure to set the following environment variables
+#
+#   export ATLAS_KEY=<your atlas API key>
+#
+FROM odewahn/atlas-base
+MAINTAINER Andrew Odewahn "odewahn@oreilly.com" 
+
+
+#
+# Use atlas-api to build the project and install it on the docker image
+#
+USER atlas
+WORKDIR /home/atlas
+RUN atlas2ipynb $ATLAS_KEY odewahn/atlas2ipynb-sample
+```
+
+# Case Study 2: Just Enough Math
+
+<img src="images/jem-formats.png"/>
+
+* A combination book, video series, and tutorial
+* Delivered as an iPython Notebook created in Atlas
+
+# Authoring a notebook in Atlas
+
+<img src="images/jem-docker-atlas.png"/>
+
+# A Dockerfile for Just Enough Math
+
+```
+#
+# This is a sample dockerfile for spinning up a content image
+# Basically, it starts the base box and then uses the 
+# atlas api to load up the content
+#
+# Before running this, be sure to set the following environment variables
+#
+#   export ATLAS_KEY=<your atlas API key>
+#
+FROM odewahn/atlas-base
+MAINTAINER Andrew Odewahn "odewahn@oreilly.com" 
+
+#
+# Install systemwide requirements
+#
+
+RUN apt-get install -y libatlas-base-dev 
+RUN apt-get install -y gfortran 
+RUN apt-get install -y gcc-multilib
+RUN apt-get install -y lynx 
+RUN apt-get install -y emacs23-nox 
+RUN apt-get install -y glpk 
+RUN apt-get install -y python-glpk
+
+
+#
+# Install python packages using pip
+#
+RUN pip install scipy
+RUN pip install neurolab
+RUN pip install hyperloglog                                      
+RUN pip install countminsketch
+RUN pip install pybloom               
+RUN pip install lshash
+
+
+#
+# Install content using atlas-api to build the project
+# Be sure to set ATLAS_KEY as an environment variable!
+#   export ATLAS_KEY=<your atlas API key>
+#
+USER atlas
+WORKDIR /home/atlas
+RUN atlas2ipynb $ATLAS_KEY odewahn/jem-docker
+
+```
+
+# DEMO
+
+
+* Start boot2docker and ssh into the box
+* Pull [odewahn/python-data-analysis](https://registry.hub.docker.com/u/odewahn/python-data-analysis/).  (*NB: This is a big image -- 3GB+*)
+
+```
+sudo docker pull odewahn/jem-tutorial
+```
+
+* Start the container, and be sure to expose port 8888
+
+```
+sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
+```
+
+* Once the container starts and your at the bash prompt, start the server with this command:
+
+```
+./start.sh
+```
+
+* Go to localhost:8888 on your local browser
 
 
 
-* Docker for a roll your own toolchain
-
-
-* Case 1 -- Docker workflow for Authors
-
-Goal here should be to show ipython-docker
-
-* Case 2 -- Docker images via Boot2Docker
 
 * Case 3 -- Pyxie.io
 
