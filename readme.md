@@ -4,12 +4,14 @@
 
 
 Docker Boston Meetup
+
 July 30, 2014
+
 Andrew Odewahn (odewahn@oreilly.com)
 
 # About O'Reilly Media
 
-<img src="images/about-orm.png"/>
+<img style="width: 50%" src="images/about-orm.png"/>
 
 * [O'Reilly Media](http://www.oreilly.com/) produces technical books and events
 * Both "Web 2.0" and "Open Source" were terms that came from O'Reilly events
@@ -17,6 +19,7 @@ Andrew Odewahn (odewahn@oreilly.com)
 
 # At heart, O'Reilly is a learning company
 
+<p style="font-size:24px">Spreading the knowledge of innovators.</p>
 
 # The way people want to learn is changing radically.
 
@@ -35,9 +38,13 @@ Andrew Odewahn (odewahn@oreilly.com)
 * Authoring and execution environment for text, math, and arbitrary code (Python, Julia, R, and Ruby)
 * Strong demand among our authors to support this format
 
-# Key Initiative
+# How can we use Docker to deliver iPython Notebooks as a new kind of learning experience?
 
-How can we use Docker to deliver iPython Notebooks as a new kind of media format?
+* How do authors created them?
+* How do we produce them?
+* How do we distribute them?
+
+We're exploring Docker as a key solution for each of these questions.
 
 # Case Study 1: Python for Data Analysis
 
