@@ -28,7 +28,7 @@ Andrew Odewahn (odewahn@oreilly.com)
 * Exploring Docker to help us make new kinds of media products
 
 
-# iPython Notebooks
+# Opportunity in iPython Notebooks
 
 <video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 	
@@ -47,10 +47,6 @@ How can we use Docker to deliver iPython Notebooks as a new kind of media format
 * Successful book in the "Data Science Area" published in 2012
 * This is a rapidly changing area
 * Create a companion product as an iPython Notebook
-
-# Running it in boot2docker
-
-<img src="images/python-data-analysis-ipynb.png"/>
 
 # DEMO
 
@@ -83,24 +79,6 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 
 * Go to localhost:8888 on your local browser
 
-# DEMO - SESSION
-
-```
-docker@boot2docker:~$ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
-root@81ef0c5d1971:/home/atlas# ./start.sh 
-2014-07-29 18:49:52.091 [NotebookApp] Using existing profile dir: u'/.ipython/profile_default'
-2014-07-29 18:49:52.093 [NotebookApp] WARNING | Starting all kernels in pylab mode is not recommended,
-    and will be disabled in a future release.
-    Please use the %matplotlib magic to enable matplotlib instead.
-    pylab implies many imports, which can have confusing side effects
-    and harm the reproducibility of your notebooks.
-2014-07-29 18:49:52.099 [NotebookApp] Using MathJax from CDN: http://cdn.mathjax.org/mathjax/latest/MathJax.js
-2014-07-29 18:49:52.123 [NotebookApp] Serving notebooks from local directory: /home/atlas/notebooks
-2014-07-29 18:49:52.124 [NotebookApp] 0 active kernels 
-2014-07-29 18:49:52.124 [NotebookApp] The IPython Notebook is running at: http://0.0.0.0:8888/
-2014-07-29 18:49:52.124 [NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-```
-
 # How do we make actual products?
 
 <img src="images/atlas-splashpage.png">
@@ -117,7 +95,7 @@ root@81ef0c5d1971:/home/atlas# ./start.sh
 <video autoplay="true" loop="true" muted="true" width="640"><source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/visual_editor.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/visual_editor.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 	
 	
-* [HTMLBook](https://github.com/oreillymedia/htmlbook)
+* [HTMLBook](http://oreillymedia.github.io/HTMLBook/)
 * [Markdown](http://daringfireball.net/projects/markdown/)
 * [AsciiDoc](http://www.methods.co.nz/asciidoc/)
 * [DocBook XML](http://www.docbook.org/)
