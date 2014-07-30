@@ -125,7 +125,7 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 
 <img src="images/atlas2ipynb.png">
 
-* A gem to transform HTMLBook into iPython Notebook's JSON-based format
+* The [atlas2ipynb gem](https://github.com/odewahn/atlas2ipynb) can transform HTMLBook into iPython Notebook's JSON-based format
 
 
 # A Dockerfile for a base Docker image
@@ -274,7 +274,7 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
 
 # Towards a more seamless experience
 
-<img src="images/pyxie.io.png"/>
+<img src="images/pyxie_io.png"/>
 
 * Super-duper pre-alpha proof of concept
 * [O'Reilly Pyxie](www.pyxie.io) is a place where authors can put Docker images for distribution
@@ -297,10 +297,13 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
 * Security issues in running untrusted code
 
 
-
 # For more Info
 
 * This presentation is at [http://odewahn.github.io/docker-at-oreilly/ch01.html](http://odewahn.github.io/docker-at-oreilly/ch01.html)
 * The source is at [https://github.com/odewahn/docker-at-oreilly](https://github.com/odewahn/docker-at-oreilly)
 * Email me directly at odewahn@oreilly.com
   * Check out the [Distributed Development Field Guide](http://sites.oreilly.com/odewahn/dds-field-guide/)
+
+# Questions / Comments
+
+<img src="images/questions.png"/>
