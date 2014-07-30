@@ -40,8 +40,8 @@ Andrew Odewahn (odewahn@oreilly.com)
 
 # How can we use Docker to deliver iPython Notebooks as a new kind of learning experience?
 
-* How do authors created them?
-* How do we produce them?
+* How do authors create them?
+* How does O'Reilly produce them (edit, copyedit, illustrate, index, etc)?
 * How do we distribute them?
 
 We're exploring Docker as a key solution for each of these questions.
@@ -128,12 +128,11 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
   * [Interactive Data Visualization for the Web](http://chimera.labs.oreilly.com/books/1230000000345)
   * [Etudes for Erlang](http://chimera.labs.oreilly.com/books/1234000000726)
 
-
-# Docker toolchain for transforming Atlas Projects to ipynb
+# A Docker toolchain for transforming Atlas Projects to ipynb format
 
 <img src="images/atlas2ipynb.png">
 
-* The [atlas2ipynb gem](https://github.com/odewahn/atlas2ipynb) can transform HTMLBook into iPython Notebook's JSON-based format
+* The [atlas2ipynb gem](https://github.com/odewahn/atlas2ipynb) gem transform HTMLBook into iPython Notebook's JSON-based format
 
 
 # A Dockerfile for a base Docker image
@@ -305,6 +304,7 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
   * [DEIS](http://deis.io/)
   * [Kubernetes](https://github.com/GoogleCloudPlatform/kubernetes)
 * Security issues in running untrusted code
+* Skills -- finding people who are familiar with these tools is challenging
 
 
 # For more Info
