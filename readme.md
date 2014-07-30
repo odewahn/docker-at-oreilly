@@ -149,14 +149,14 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 
 * Code samples that are tagged as "Executable" will be runnable in the browser
 
-# A Docker toolchain for transforming Atlas Projects to ipynb format
+# An Atlas to iPython Notebook conversion gem
 
 <img src="images/atlas2ipynb.png">
 
 * The [atlas2ipynb gem](https://github.com/odewahn/atlas2ipynb) gem transform HTMLBook into iPython Notebook's JSON-based format
 
 
-# A Dockerfile for a base Docker image
+# A Dockerfile for the base image with iPython Notebooks and the atlas2ipynb toolchain pre-installed
 
 ```
 FROM ubuntu
@@ -286,7 +286,7 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
   * User runs the container by going to the URL
 * Super-duper pre-alpha proof of concept
 
-# DEMO -- "Just enough Math" on Pyxie
+# DEMO -- Pyxie.io
 
 <video controls muted="true" width="720">
    <source src="https://s3.amazonaws.com/orm-atlas-media/pyxie-poc-video.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
