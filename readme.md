@@ -19,7 +19,8 @@ Andrew Odewahn (odewahn@oreilly.com)
 
 # At heart, O'Reilly is a learning company
 
-<p style="font-size:24px">Spreading the knowledge of innovators.</p>
+<p style="font-size:24px">"Spreading the knowledge of innovators"  -- O'Reilly exists to take the knowledge in an experts head and
+	package it up so that other people can learn it.</p>  
 
 # The way people want to learn is changing radically.
 
@@ -38,15 +39,15 @@ Andrew Odewahn (odewahn@oreilly.com)
 * Authoring and execution environment for text, math, and arbitrary code (Python, Julia, R, and Ruby)
 * Strong demand among our authors to support this format
 
-# How can we use Docker to deliver iPython Notebooks as a new kind of learning experience?
+# How can we deliver iPython Notebooks as a new kind of learning experience?
 
 * How do authors create them?
-* How does O'Reilly produce them (edit, copyedit, illustrate, index, etc)?
-* How do we distribute them?
+* How do we produce them (edit, copyedit, illustrate, index, etc)?
+* How do we distribute them to make a compelling experience?
 
 We're exploring Docker as a key solution for each of these questions.
 
-# Case Study 1: Python for Data Analysis
+# Case Study 1: Packaging the examples for _Python for Data Analysis_ as a Docker image
 
 <img style="width: 60%" src="images/python-data-analysis.jpg"/>
 
@@ -55,8 +56,6 @@ We're exploring Docker as a key solution for each of these questions.
 * Create a companion product as an iPython Notebook
 
 # DEMO
-
-<video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/boot2docker-demo.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 
 * Install [boot2docker](https://github.com/boot2docker/boot2docker) (*NB: if you have an older version of Boot2Docker, here's [a great article on how to upgrade](http://blog.javabien.net/2014/03/17/upgrade-docker-and-boot2docker-on-osx/)*)
 * Set up an account on [docker.com](https://hub.docker.com/)
@@ -87,7 +86,12 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 
 * Go to localhost:8888 on your local browser
 
-# How do we make actual products?
+## Here's a quick video that shows this in action
+
+<video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/boot2docker-demo.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
+
+
+# How do we go beyond companion pieces and make actual products?
 
 <img src="images/atlas-splashpage.png">
 
