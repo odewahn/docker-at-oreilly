@@ -44,6 +44,7 @@ Andrew Odewahn (odewahn@oreilly.com)
 
 * How do authors create them?
 * How do we produce them (edit, copyedit, illustrate, index, etc)?
+* How do we get that content out in other formats (print, MOBI, Safari, etc)?
 * How do we distribute them to make a compelling experience?
 
 We're exploring Docker as a key solution for each of these questions.
