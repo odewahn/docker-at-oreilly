@@ -274,7 +274,8 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
 
 # Towards a more seamless experience
 
-<img src="images/pyxie_io.png"/>
+<video autoplay="true" loop="true" muted="true" width="720">
+   <source src="https://s3.amazonaws.com/orm-atlas-media/pyxie-poc-video.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 
 * Super-duper pre-alpha proof of concept
 * [O'Reilly Pyxie](www.pyxie.io) is a place where authors can put Docker images for distribution
