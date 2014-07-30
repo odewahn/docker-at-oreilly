@@ -124,13 +124,10 @@ root@81ef0c5d1971:/home/atlas# ./start.sh
 
 # Version Control
 
-All Atlas content is stored in Git.  
-
 <img src="images/atlas-github.png">
 
-In fact, this presentation is in Atlas on Github:
-
-https://github.com/odewahn/docker-at-oreilly
+* All Atlas content is stored in Git.
+* This presentation was created in Atlas and posted to [Github](https://github.com/odewahn/docker-at-oreilly)
 
 	
 # Transformation engines
@@ -151,24 +148,56 @@ https://github.com/odewahn/docker-at-oreilly
 <img src="images/atlas2ipynb.png">
 
 * A gem to transform HTMLBook into iPython Notebook's JSON-based format
+
+
+# A Dockerfile for a base Docker image
+
+```
+FROM ubuntu
+MAINTAINER Andrew Odewahn "odewahn@oreilly.com"
+
+RUN apt-get update
+RUN apt-get install -y ruby1.9.3
+RUN apt-get install -y python-software-properties python-dev python-pip
+RUN apt-get install -y libfreetype6-dev libpng-dev libncurses5-dev vim git-core build-essential curl unzip wget
+
+# Install Atlas-specific gems
+RUN gem install bundler atlas-api atlas2ipynb
+
+# Install ipython notebook requirements
+RUN pip install --upgrade pip
+ADD requirements.txt /tmp/requirements.txt
+RUN pip install numpy==1.7.1
+RUN pip install -r /tmp/requirements.txt --allow-unverified matplotlib --allow-all-external
+
+#
+# Create the command to actually run the ipython notebook
+#
+RUN adduser --disabled-password --home=/home/atlas --gecos "" atlas
+USER atlas
+WORKDIR /home/atlas
+RUN echo '#!/bin/sh' > start.sh
+RUN echo 'ipython notebook --ip=0.0.0.0 --port=8888 --pylab=inline --no-browser'  >> start.sh
+RUN chmod +x start.sh
+
+#
+# Set us back to the root user
+#
+USER root
+```
+
 * An [atlas-base](https://github.com/odewahn/ipython-docker/blob/master/base/Dockerfile) Docker image
 
 
-# "Dockerfile" for books
+# A Dockerfile for each book
 
 ```
-#
-# This is a sample dockerfile for spinning up a content image
-# Basically, it starts the base box and then uses the 
-# atlas api to load up the content
-#
-# Before running this, be sure to set the following environment variables
-#
-#   export ATLAS_KEY=<your atlas API key>
-#
 FROM odewahn/atlas-base
 MAINTAINER Andrew Odewahn "odewahn@oreilly.com" 
 
+#
+# Author can add any dependencies he or she requires
+#
 
 #
 # Use atlas-api to build the project and install it on the docker image
@@ -177,6 +206,8 @@ USER atlas
 WORKDIR /home/atlas
 RUN atlas2ipynb $ATLAS_KEY odewahn/atlas2ipynb-sample
 ```
+
+* An author can include a Dockerfile in his or her Atlas project and use it to create an interactive iPython Notebook
 
 # Case Study 2: Just Enough Math
 
@@ -192,15 +223,6 @@ RUN atlas2ipynb $ATLAS_KEY odewahn/atlas2ipynb-sample
 # A Dockerfile for Just Enough Math
 
 ```
-#
-# This is a sample dockerfile for spinning up a content image
-# Basically, it starts the base box and then uses the 
-# atlas api to load up the content
-#
-# Before running this, be sure to set the following environment variables
-#
-#   export ATLAS_KEY=<your atlas API key>
-#
 FROM odewahn/atlas-base
 MAINTAINER Andrew Odewahn "odewahn@oreilly.com" 
 
@@ -264,10 +286,43 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
 * Go to localhost:8888 on your local browser
 
 
+# This experience leaves a lot to be desired
+
+* One of the first projects was "Kids Code," which teaches kids about Python
+* "OK kids, let's fire up an Ubuntu Virtual Machine and do some coding!" doesn't work well
+* Even for pros, this is a bit intimidating
+  * VMs and Vagrant are unfamiliar
+  * Windows does not include an SSH client...
+
+# Towards a more seamless experience
+
+<img src="images/pyxie.io.png"/>
+
+* Super-duper pre-alpha proof of concept
+* [O'Reilly Pyxie](www.pyxie.io) is a place where authors can put Docker images for distribution
 
 
-* Case 3 -- Pyxie.io
+# DEMO -- Just enough Math
+
+* Go to [www.pyxie.io](http://www.pyxie.io)
+* Log in
+* Launch "Just Enough Math"
+* Boom
+
+# Lots of caveats
+
+* Scalability is a *HUGE* issue
+* Exploring many solutions for hosting images
+  * [Docker on Mesos](https://github.com/mesosphere/mesos-docker)
+  * [DEIS](http://deis.io/)
+  * [Kubernetes](https://github.com/GoogleCloudPlatform/kubernetes)
+* Security issues in running untrusted code
 
 
 
-* My contact info
+# For more Info
+
+* This presentation is at [http://odewahn.github.io/docker-at-oreilly/ch01.html](http://odewahn.github.io/docker-at-oreilly/ch01.html)
+* The source is at [https://github.com/odewahn/docker-at-oreilly](https://github.com/odewahn/docker-at-oreilly)
+* Email me directly at odewahn@oreilly.com
+  * Check out the [Distributed Development Field Guide](http://sites.oreilly.com/odewahn/dds-field-guide/)
