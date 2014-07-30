@@ -2,10 +2,9 @@
 
 <img src="images/docker-at-orm-cover.png"/>
 
+
 Docker Boston Meetup
-
 July 30, 2014
-
 Andrew Odewahn (odewahn@oreilly.com)
 
 # About O'Reilly Media
@@ -279,8 +278,9 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
 <video autoplay="true" loop="true" muted="true" width="720">
    <source src="https://s3.amazonaws.com/orm-atlas-media/pyxie-poc-video.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 
-* Super-duper pre-alpha proof of concept
 * [O'Reilly Pyxie](www.pyxie.io) is a place where authors can put Docker images for distribution
+* Super-duper pre-alpha proof of concept
+* Inspired by Nick Stinemates [any-sass](http://github.com/keeb/any-saas) project
 
 
 # DEMO -- Just enough Math
@@ -302,10 +302,10 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
 
 # For more Info
 
-* This presentation is at [http://odewahn.github.io/docker-at-oreilly/ch01.html](http://odewahn.github.io/docker-at-oreilly/ch01.html)
+* This presentation is at [http://sites.oreilly.com/odewahn/docker-at-oreilly/ch01.html](http://sites.oreilly.com/odewahn/docker-at-oreilly/ch01.html)
 * The source is at [https://github.com/odewahn/docker-at-oreilly](https://github.com/odewahn/docker-at-oreilly)
 * Email me directly at odewahn@oreilly.com
-  * Check out the [Distributed Development Field Guide](http://sites.oreilly.com/odewahn/dds-field-guide/)
+  * While you're there, check out my [Distributed Development Field Guide](http://sites.oreilly.com/odewahn/dds-field-guide/)
 
 # Questions / Comments
 
