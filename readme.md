@@ -9,6 +9,8 @@ July 30, 2014
 
 Andrew Odewahn (odewahn@oreilly.com)
 
+This presentation is at [http://bit.ly/docker-at-oreilly](http://bit.ly/docker-at-oreilly)
+
 # About O'Reilly Media
 
 <img style="width: 50%" src="images/about-orm.png"/>
@@ -31,7 +33,7 @@ Andrew Odewahn (odewahn@oreilly.com)
 * Exploring Docker to help us make new kinds of media products
 
 
-# Opportunity in iPython Notebooks
+# How do we respond to demand for iPython Notebooks
 
 <video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 	
@@ -40,16 +42,13 @@ Andrew Odewahn (odewahn@oreilly.com)
 * Strong demand among our authors to support this format
 * Plus, it's awesome
 
-# How can we deliver iPython Notebooks as a new kind of learning experience?
+# How we're using Docker to...
 
-* How do authors create them?
-* How do we produce them (edit, copyedit, illustrate, index, etc)?
-* How do we get that content out in other formats (print, MOBI, Safari, etc)?
-* How do we distribute them to make a compelling experience?
+* help authors create them
+* produce them (edit, copyedit, illustrate, index, etc)
+* distribute them to make a compelling experience?
 
-We're exploring Docker as a key solution for each of these questions.
-
-# Case Study 1: Packaging the examples for _Python for Data Analysis_ as a Docker image
+# Experiment 1: Packaging the examples for _Python for Data Analysis_ as a Docker image
 
 <img style="width: 60%" src="images/python-data-analysis.jpg"/>
 
@@ -137,17 +136,18 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 
 
 
-# Case Study 2: Just Enough Math
+# Experiment 2: Just Enough Math
 
 <img src="images/jem-formats.png"/>
 
 * A combination book, video series, and tutorial
 * Delivered as an iPython Notebook created in Atlas
 
-# Authoring a notebook in Atlas
+# The project was written and produced in Atlas
 
 <img src="images/jem-docker-atlas.png"/>
 
+* Code samples that are tagged as "Executable" will be runnable in the browser
 
 # A Docker toolchain for transforming Atlas Projects to ipynb format
 
@@ -236,6 +236,14 @@ RUN atlas2ipynb $ATLAS_KEY odewahn/jem-docker
 
 ```
 
+# "docker push" is the new publishing
+
+```
+docker build --tag odewahn/jem-tutorial .
+docker push odewahn/jem-tutorial
+```
+
+
 # DEMO
 
 
@@ -269,22 +277,19 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
   * VMs and Vagrant are unfamiliar
   * Windows does not include an SSH client...
 
-# Towards a more seamless experience
-
-<video autoplay="true" loop="true" muted="true" width="720">
-   <source src="https://s3.amazonaws.com/orm-atlas-media/pyxie-poc-video.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
+# Experiment #3: Towards a more seamless experience
 
 * [O'Reilly Pyxie](www.pyxie.io) is a place where authors can put Docker images for distribution
-* Super-duper pre-alpha proof of concept
 * Inspired by Nick Stinemates [any-sass](http://github.com/keeb/any-saas) project
+  * Frontend app starts a container based on an image you choose
+  * Container is mapped to a URL using Hipache and returned to the user
+  * User runs the container by going to the URL
+* Super-duper pre-alpha proof of concept
 
+# DEMO -- "Just enough Math" on Pyxie
 
-# DEMO -- Just enough Math
-
-* Go to [www.pyxie.io](http://www.pyxie.io)
-* Log in
-* Launch "Just Enough Math"
-* Boom
+<video controls muted="true" width="720">
+   <source src="https://s3.amazonaws.com/orm-atlas-media/pyxie-poc-video.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 
 # Lots of caveats
 
@@ -300,7 +305,7 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
 
 # For more Info
 
-* This presentation is at [http://sites.oreilly.com/odewahn/docker-at-oreilly/ch01.html](http://sites.oreilly.com/odewahn/docker-at-oreilly/ch01.html)
+* This presentation is at [http://bit.ly/docker-at-oreilly](http://bit.ly/docker-at-oreilly)
 * The source is at [https://github.com/odewahn/docker-at-oreilly](https://github.com/odewahn/docker-at-oreilly)
 * Email me directly at odewahn@oreilly.com
   * While you're there, check out my [Distributed Development Field Guide](http://sites.oreilly.com/odewahn/dds-field-guide/)
