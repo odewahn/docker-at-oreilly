@@ -50,7 +50,9 @@ How can we use Docker to deliver iPython Notebooks as a new kind of media format
 
 # DEMO
 
-* Install [boot2docker](https://github.com/boot2docker/boot2docker) 
+<video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/boot2docker-demo.mp44" type="video/mp4"> Your browser does not support the video tag.</video>
+
+* Install [boot2docker](https://github.com/boot2docker/boot2docker) (*NB: if you have an older version of Boot2Docker, here's [a great article on how to upgrade](http://blog.javabien.net/2014/03/17/upgrade-docker-and-boot2docker-on-osx/)*)
 * Set up an account on [docker.com](https://hub.docker.com/)
 * Expose port 8888 in Virtualbox (do this just once)
 
