@@ -35,9 +35,10 @@ Andrew Odewahn (odewahn@oreilly.com)
 
 <video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 	
-* Critical tool in the scientific and big data science communities
-* Authoring and execution environment for text, math, and arbitrary code (Python, Julia, R, and Ruby)
+* [iPython Notebooks](http://ipython.org/notebook.html) are becoming the defacto tool in the scientific and big data science communities
+* Provides authoring and execution environment for text, math, and arbitrary code (Python, Julia, R, and Ruby)
 * Strong demand among our authors to support this format
+* Plus, it's awesome
 
 # How can we deliver iPython Notebooks as a new kind of learning experience?
 
@@ -308,6 +309,7 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
   * [DEIS](http://deis.io/)
   * [Kubernetes](https://github.com/GoogleCloudPlatform/kubernetes)
 * Security issues in running untrusted code
+* Persistence and state
 * Skills -- finding people who are familiar with these tools is challenging
 
 
