@@ -59,6 +59,10 @@ We're exploring Docker as a key solution for each of these questions.
 
 # DEMO
 
+<video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/boot2docker-demo.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
+	
+## The key steps are
+
 * Install [boot2docker](https://github.com/boot2docker/boot2docker) (*NB: if you have an older version of Boot2Docker, here's [a great article on how to upgrade](http://blog.javabien.net/2014/03/17/upgrade-docker-and-boot2docker-on-osx/)*)
 * Set up an account on [docker.com](https://hub.docker.com/)
 * Expose port 8888 in Virtualbox (do this just once)
@@ -88,9 +92,6 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 
 * Go to localhost:8888 on your local browser
 
-## Here's a quick video that shows this in action
-
-<video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/boot2docker-demo.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 
 
 # How do we go beyond companion pieces and make actual products?
@@ -100,11 +101,11 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 * Companion products are great, but how do we make actual products themselves?
 * We use an internally developed tool call [O'Reilly Atlas](https://atlas.oreilly.com/) for 80% of our content.
 
-# Atlas Key Concepts
+# Atlas has 3 core concepts
 
 <img src="images/atlas-key-ideas.png">
 
-# A single source for semantic content
+# A single source of semantically rich content
 
 <video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/visual_editor.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/visual_editor.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 	
@@ -114,7 +115,7 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 * [AsciiDoc](http://www.methods.co.nz/asciidoc/)
 * [DocBook XML](http://www.docbook.org/)
 
-# Version Control
+# Version control in Git
 
 <img src="images/atlas-github.png">
 
@@ -122,7 +123,7 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 * This presentation was created in Atlas and posted to [Github](https://github.com/odewahn/docker-at-oreilly)
 
 	
-# Transformation engines
+# Transformation engines to create formats for consumption
 
 <video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/make_a_book.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/introducingatlas/make_a_book.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 	
@@ -133,6 +134,20 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
   * [Raspberry Pi Cookbook](http://razzpisampler.oreilly.com/)
   * [Interactive Data Visualization for the Web](http://chimera.labs.oreilly.com/books/1230000000345)
   * [Etudes for Erlang](http://chimera.labs.oreilly.com/books/1234000000726)
+
+
+
+# Case Study 2: Just Enough Math
+
+<img src="images/jem-formats.png"/>
+
+* A combination book, video series, and tutorial
+* Delivered as an iPython Notebook created in Atlas
+
+# Authoring a notebook in Atlas
+
+<img src="images/jem-docker-atlas.png"/>
+
 
 # A Docker toolchain for transforming Atlas Projects to ipynb format
 
@@ -180,38 +195,7 @@ USER root
 * An [atlas-base](https://github.com/odewahn/ipython-docker/blob/master/base/Dockerfile) Docker image
 
 
-# A Dockerfile for each book
-
-```
-FROM odewahn/atlas-base
-MAINTAINER Andrew Odewahn "odewahn@oreilly.com" 
-
-#
-# Author can add any dependencies he or she requires
-#
-
-#
-# Use atlas-api to build the project and install it on the docker image
-#
-USER atlas
-WORKDIR /home/atlas
-RUN atlas2ipynb $ATLAS_KEY odewahn/atlas2ipynb-sample
-```
-
-* An author can include a Dockerfile in his or her Atlas project and use it to create an interactive iPython Notebook
-
-# Case Study 2: Just Enough Math
-
-<img src="images/jem-formats.png"/>
-
-* A combination book, video series, and tutorial
-* Delivered as an iPython Notebook created in Atlas
-
-# Authoring a notebook in Atlas
-
-<img src="images/jem-docker-atlas.png"/>
-
-# A Dockerfile for Just Enough Math
+# A Dockerfile for Just Enough Math (or any book, for that matter)
 
 ```
 FROM odewahn/atlas-base
