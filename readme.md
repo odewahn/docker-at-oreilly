@@ -298,6 +298,7 @@ sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
   * [Docker on Mesos](https://github.com/mesosphere/mesos-docker)
   * [DEIS](http://deis.io/)
   * [Kubernetes](https://github.com/GoogleCloudPlatform/kubernetes)
+  * [shipyard](https://github.com/shipyard/shipyard)
 * Security issues in running untrusted code
 * Persistence and state
 * Skills -- finding people who are familiar with these tools is challenging
