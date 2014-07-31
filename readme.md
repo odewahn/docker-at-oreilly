@@ -38,7 +38,7 @@ This presentation is at [http://bit.ly/docker-at-oreilly](http://bit.ly/docker-a
 <video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 	
 * [IPython Notebooks](http://ipython.org/notebook.html) are becoming the defacto tool in the scientific and big data science communities
-* Provides authoring and execution environment for text, math, and arbitrary code (Python, Julia, R, and Ruby)
+* Provides authoring and execution environment for text, math, and arbitrary code (Python, Julia, R, Ruby, and [more](http://andrew.gibiansky.com/blog/ipython/ipython-kernels))
 * Strong demand among our authors to support this format
 * Plus, it's awesome
 
