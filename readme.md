@@ -33,11 +33,11 @@ This presentation is at [http://bit.ly/docker-at-oreilly](http://bit.ly/docker-a
 * Exploring Docker to help us make new kinds of media products
 
 
-# How do we respond to demand for iPython Notebooks
+# How do we respond to demand for IPython Notebooks
 
 <video autoplay="true" loop="true" muted="true" width="720"><source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.webm" type="video/webm"> <source src="https://s3.amazonaws.com/orm-atlas-media/ipynb.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
 	
-* [iPython Notebooks](http://ipython.org/notebook.html) are becoming the defacto tool in the scientific and big data science communities
+* [IPython Notebooks](http://ipython.org/notebook.html) are becoming the defacto tool in the scientific and big data science communities
 * Provides authoring and execution environment for text, math, and arbitrary code (Python, Julia, R, and Ruby)
 * Strong demand among our authors to support this format
 * Plus, it's awesome
@@ -54,7 +54,7 @@ This presentation is at [http://bit.ly/docker-at-oreilly](http://bit.ly/docker-a
 
 * Successful book in the "Data Science Area" published in 2012
 * This is a rapidly changing area
-* Create a companion product as an iPython Notebook
+* Create a companion product as an IPython Notebook
 
 # DEMO
 
@@ -141,7 +141,7 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 <img src="images/jem-formats.png"/>
 
 * A combination book, video series, and tutorial
-* Delivered as an iPython Notebook created in Atlas
+* Delivered as an IPython Notebook created in Atlas
 
 # The project was written and produced in Atlas
 
@@ -149,14 +149,14 @@ sudo docker run -i -t -p 8888:8888 odewahn/python-data-analysis /bin/bash
 
 * Code samples that are tagged as "Executable" will be runnable in the browser
 
-# An Atlas to iPython Notebook conversion gem
+# An Atlas to IPython Notebook conversion gem
 
 <img src="images/atlas2ipynb.png">
 
-* The [atlas2ipynb gem](https://github.com/odewahn/atlas2ipynb) gem transform HTMLBook into iPython Notebook's JSON-based format
+* The [atlas2ipynb gem](https://github.com/odewahn/atlas2ipynb) gem transform HTMLBook into IPython Notebook's JSON-based format
 
 
-# A Dockerfile for the base image with iPython Notebooks and the atlas2ipynb toolchain pre-installed
+# A Dockerfile for the base image with IPython Notebooks and the atlas2ipynb toolchain pre-installed
 
 ```
 FROM ubuntu
