@@ -260,7 +260,7 @@ sudo docker pull odewahn/jem-tutorial
 sudo docker run -i -t -p 8888:8888 odewahn/jem-tutorial /bin/bash
 ```
 
-* Once the container starts and your at the bash prompt, start the server with this command:
+* Once the container starts and you're at the bash prompt, start the server with this command:
 
 ```
 ./start.sh
